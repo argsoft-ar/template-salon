@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import {
   Star,
-  Play,
-  ArrowRight,
   Calendar,
   Users,
   PartyPopper,
@@ -18,7 +16,6 @@ import {
   MapPin,
   Clock,
   Phone,
-  FileText,
   MessageCircle,
 } from 'lucide-react';
 import './App.css';
@@ -41,7 +38,6 @@ export const SITE_DATA = {
     { label: "Testimonios", href: "#testimonios" },
   ],
   hero: {
-    badge: "Más de 500 eventos inolvidables realizados",
     title: "El escenario perfecto para tus momentos únicos.",
     subtitle:
       "Arquitectura moderna, gastronomía de autor y tecnología de última generación. Diseñamos experiencias a medida para bodas, fiestas de 15 y eventos corporativos.",
@@ -427,11 +423,6 @@ export default function App() {
       >
         <div className="hero-overlay" />
         <div className="container hero-content">
-          <div className="hero-badge">
-            <Star size={16} className="hero-badge-star" fill="var(--color-primary)" />
-            <span>{SITE_DATA.hero.badge}</span>
-          </div>
-
           <h1 className="hero-title">{SITE_DATA.hero.title}</h1>
           <p className="hero-subtitle">{SITE_DATA.hero.subtitle}</p>
 
@@ -441,14 +432,12 @@ export default function App() {
               onClick={() => scrollToSection('#disponibilidad')}
             >
               <span>{SITE_DATA.hero.ctaPrimary}</span>
-              <ArrowRight size={18} />
             </button>
 
             <button
               className="btn-secondary"
               onClick={() => setIsTourModalOpen(true)}
             >
-              <Play size={16} fill="currentColor" />
               <span>{SITE_DATA.hero.ctaSecondary}</span>
             </button>
           </div>
@@ -742,14 +731,12 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  <MessageCircle size={18} />
                   <span>{SITE_DATA.footerCta.btnPrimary}</span>
                 </a>
                 <button
                   className="btn-secondary"
                   onClick={() => alert("El brochure oficial en PDF está listo para descarga. Te redirigimos con un asesor para enviártelo.")}
                 >
-                  <FileText size={18} />
                   <span>{SITE_DATA.footerCta.btnSecondary}</span>
                 </button>
               </div>
@@ -833,7 +820,6 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  <MessageCircle size={18} />
                   <span>Agendar Recorrido Presencial</span>
                 </a>
               </div>
